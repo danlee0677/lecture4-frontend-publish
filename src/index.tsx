@@ -1,15 +1,28 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { Provider } from 'react-redux';
+import { configureStore } from '@reduxjs/toolkit';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { MantineProvider } from '@mantine/core';
+import { ModalsProvider } from '@mantine/modals';
+import { BrowserRouter } from 'react-router-dom';
+import { Notifications } from '@mantine/notifications';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <MantineProvider>
+        <ModalsProvider>
+          <Notifications />
+          <App />
+        </ModalsProvider>
+      </MantineProvider>
+    </BrowserRouter>
   </React.StrictMode>
 );
 
