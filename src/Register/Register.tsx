@@ -48,12 +48,9 @@ function Register() {
   return (
     <Container size="sm" >
       <Stack gap="md">
-        <TextInput value={username} label="Your Username"
-        onChange={(e) => setUsername(e.currentTarget.value)} />
-        <PasswordInput value={password} label="Enter Your Password" 
-        onChange={(e) => setPassword(e.currentTarget.value)} />
-        <PasswordInput value={checkPassword} label="Enter Your Password Again"
-        onChange={(e) => setCheckPassword(e.currentTarget.value)} />
+        <TextInput />
+        <PasswordInput />
+        <PasswordInput />
         <Button onClick={() => handleRegister({username: username, password: password, checkPassword:checkPassword, navigate: navigate})}>Register</Button>
       </Stack>
     </Container>
